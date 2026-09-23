@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>منصة تعزيز السلوك الإيجابي | الابتدائية الثالثة والسبعون بمكة المكرمة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
+<script type="module">import * as pdfjsLib from "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs"; window.pdfjsLib=pdfjsLib;</script>
+<style>
+:root{--navy:#102a43;--teal:#0f766e;--gold:#eab308;--bg:#f4f7fa;--card:#fff;--text:#17324d;--muted:#6b7b8c;--danger:#b42318;--ok:#087443;--line:#dbe4ec;--shadow:0 10px 30px rgba(16,42,67,.08);--r:20px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Cairo,Arial,sans-serif}.topbar{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;padding:12px 18px;box-shadow:0 5px 20px #0002}.topbar .inner{max-width:1450px;margin:auto;display:flex;align-items:center;gap:13px}.logo{width:52px;height:52px;border-radius:16px;background:linear-gradient(145deg,#facc15,#eab308);color:var(--navy);display:grid;place-items:center;font-weight:800;font-size:20px;box-shadow:0 6px 18px #0003}.brand h1{font-size:18px;margin:0}.brand p{margin:1px 0 0;color:#d9e7f1;font-size:11px}.clock{margin-right:auto;text-align:left;line-height:1.45;font-size:12px}.clock b{font-size:15px;display:block}.wrap{max-width:1450px;margin:auto;padding:22px}.card{background:#fff;border:1px solid #e7edf2;border-radius:var(--r);box-shadow:var(--shadow);padding:20px;margin-bottom:18px}.hidden{display:none!important}.grid{display:grid;gap:16px}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{padding:20px;border-radius:18px;background:#fff;border:1px solid var(--line)}.stat b{display:block;font-size:30px;color:var(--navy)}.stat span{color:var(--muted);font-size:13px}h2,h3{margin-top:0}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}.btn{padding:10px 15px;border-radius:12px;background:#eef3f7;color:var(--text);font-weight:700}.btn.primary{background:var(--teal);color:#fff}.btn.navy{background:var(--navy);color:#fff}.btn.gold{background:var(--gold);color:#102a43}.btn.danger{background:#fee4e2;color:var(--danger)}.btn.sm{padding:7px 10px;font-size:12px}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px 13px;background:#fff;color:var(--text);outline:none}input:focus,select:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px #0f766e18}label{font-size:13px;font-weight:700;display:block;margin-bottom:6px}.field{margin-bottom:12px}.nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 6px 20px rgba(16,42,67,.06)}.nav button{padding:10px 15px;border:0;border-radius:14px;background:transparent;color:var(--navy);font-weight:800;transition:.2s;cursor:pointer}.nav button:hover{background:#eef6f5;transform:translateY(-1px)}.nav button.active{background:linear-gradient(135deg,var(--navy),#17496d);color:#fff;box-shadow:0 6px 16px rgba(16,42,67,.18)}.class-card{border:1px solid var(--line);border-radius:18px;padding:17px;background:#fff}.class-card h3{margin:0 0 8px}.progress{height:10px;background:#e7edf2;border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:var(--teal);border-radius:99px}.muted{color:var(--muted);font-size:13px}.pill{display:inline-flex;padding:5px 9px;border-radius:999px;background:#edf7f5;color:var(--teal);font-size:12px;font-weight:700}table{width:100%;border-collapse:collapse}th,td{padding:10px;border-bottom:1px solid #edf1f4;text-align:right;font-size:13px}th{background:#f7f9fb}.modal{position:fixed;inset:0;background:#07182799;z-index:50;display:grid;place-items:center;padding:18px}.modalbox{width:min(720px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:22px;padding:22px}.login{min-height:calc(100vh - 80px);display:grid;place-items:center}.loginbox{width:min(460px,100%);text-align:center}.loginbox .logo{margin:0 auto 12px}.toast{position:fixed;left:20px;bottom:20px;z-index:100;background:var(--navy);color:#fff;padding:13px 18px;border-radius:14px;box-shadow:var(--shadow);display:none}.toast.show{display:block}.scan-hero{padding:20px;border-radius:22px;background:linear-gradient(135deg,#102a43,#0f766e);color:#fff}.scan-hero.ok{animation:glow 1.2s ease}.pulse-btn{animation:btnPulse .8s ease}.barcode-btn{font-size:20px;min-width:52px}.thanks{margin-top:14px;padding:16px;border-radius:16px;background:linear-gradient(135deg,#effaf4,#fff);border:1px solid #9bd8b8;text-align:center}.behavior-selects{display:flex;gap:8px;flex-wrap:wrap}.behavior-selects .chip{user-select:none}.settings-danger{background:#fff5f4;border:1px solid #f2c3bf}.scan-input{font-size:22px;text-align:center;font-weight:800;letter-spacing:2px}.student-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.student-row{padding:12px;border:1px solid var(--line);border-radius:13px;display:flex;justify-content:space-between;gap:8px;align-items:center}.student-row.present{border-color:#74c69d;background:#effaf4}.student-row.absent{border-color:#f1a6a0;background:#fff4f3}.drop{border:2px dashed #b9c8d5;border-radius:16px;padding:25px;text-align:center;background:#fafcfd}.chips{display:flex;gap:7px;flex-wrap:wrap}.chip{padding:9px 14px;border-radius:14px;background:#eaf0f5;cursor:pointer;font-weight:800;transition:.18s;min-height:42px;display:inline-flex;align-items:center;justify-content:center}.chip:hover{transform:translateY(-1px)}.chip.sel{background:var(--teal);color:#fff;box-shadow:0 5px 14px rgba(15,118,110,.22)}.behavior-selects{gap:10px}.behavior-selects .chip{flex:1 1 150px;font-size:14px}.behavior-chips .chip{font-size:13px;min-height:40px}.vote-btn{background:#fff4cf!important;color:#7a5600!important;border:1px solid #efd47b!important}.vote-btn.voted{background:#e8f7ee!important;color:#087443!important;border-color:#9bd8b8!important}.chip.sm{padding:5px 8px;font-size:11px}.student-row{flex-direction:column;align-items:stretch}.behavior-chips{margin-top:8px}.qrgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.qr{text-align:center}.qrbox{display:grid;place-items:center;margin:12px auto}.footer{text-align:center;color:var(--muted);padding:25px 10px 35px;font-size:13px}.footer b{color:var(--navy)}.chartbox{position:relative;height:290px;border:1px solid var(--line);border-radius:18px;padding:12px;background:#fff}.chartbox canvas{width:100%;height:100%}.legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;font-size:12px}.legend span{display:inline-flex;gap:5px;align-items:center}.dot{width:10px;height:10px;border-radius:50%;display:inline-block}.success{color:var(--ok);font-weight:800}.brandmark{font-size:26px;font-weight:800;color:var(--gold);margin-bottom:3px}.login-help{background:#fff8db;border:1px solid #f5df86;padding:10px;border-radius:12px;font-size:12px;color:#6b5200}
+@keyframes glow{0%{box-shadow:0 0 0 #eab30800}35%{box-shadow:0 0 38px #eab308bb}100%{box-shadow:0 0 0 #eab30800}}@keyframes btnPulse{0%{transform:scale(1);box-shadow:0 0 0 #0f766e00}50%{transform:scale(1.06);box-shadow:0 0 22px #0f766e88}100%{transform:scale(1);box-shadow:0 0 0 #0f766e00}}@media(max-width:1100px){.wrap{padding:16px}.g4{grid-template-columns:repeat(2,1fr)}.g3,.qrgrid{grid-template-columns:1fr 1fr}.student-list{grid-template-columns:1fr 1fr}.clock{display:none}}
+@media(max-width:950px){.g4{grid-template-columns:repeat(2,1fr)}.g3,.qrgrid{grid-template-columns:1fr 1fr}.student-list{grid-template-columns:1fr 1fr}.clock{display:none}}@media(max-width:600px){.btn{min-height:44px}.nav button{min-height:42px}.student-row{padding:10px}.modalbox{padding:16px}.wrap{padding:13px}.g4,.g3,.g2,.qrgrid,.student-list{grid-template-columns:1fr}.topbar{padding:10px}.brand h1{font-size:15px}.brand p{font-size:10px}}
+@media print{.topbar,.nav,.no-print,.footer{display:none!important}.wrap{max-width:none;padding:0}.card{box-shadow:none;border:0}}
+.teacher-vote-row{display:flex;gap:10px;align-items:stretch}.teacher-vote-row #teacher{flex:1}.teacher-vote-button{white-space:nowrap}.behavior-active-wrap{font-weight:800}@media(max-width:700px){.teacher-vote-row{flex-direction:column}.teacher-vote-button{width:100%}} </style>
+</head>
+<body>
+<header class="topbar"><div class="inner"><div class="logo">73</div><div class="brand"><div class="brandmark">✦</div><h1>منصة تعزيز السلوك الإيجابي</h1><p>الابتدائية الثالثة والسبعون بمكة المكرمة</p></div><div class="clock"><b id="clockTime">--:--:--</b><span id="clockDates">جاري تحميل التاريخ...</span></div></div></header>
+<main id="app" class="wrap"></main>
+<div id="toast" class="toast"></div><div id="modal" class="modal hidden"></div>
+<footer class="footer">الموجهة الطلابية <b>الأستاذة مها العتيبي</b><br><b>الأستاذة فاطمة الصعب</b><br>مديرة المدرسة: <b>الأستاذة عبير الحربي</b></footer>
+<script>
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbz_Xr0tK86p3F4Sf7OxJrXc8ykyZ8NcDo-egH5_6RBW0bwlVIyxvI0Jn_0if3lzEsJmBg/exec";
+const SCHOOL_NAME="الابتدائية الثالثة والسبعون بمكة المكرمة";
+const STORE_KEY="positive_behavior_73_v2",SESSION_KEY="positive_behavior_session_v2";
+const DEFAULT_BEHAVIORS=["التعاون","الاحترام","الإنضباط","المثابرة"];
+let BEHAVIORS=[...DEFAULT_BEHAVIORS];
+const SETTINGS_KEY="positive_behavior_73_settings_v2";
+const state={classes:[],students:[],staff:[],attendance:[],teacherNames:[]};
+let route="dashboard",selectedClassId="",editingId="",pollTimer=null,lastScanStudent=null,clockTimer=null;
+const $=s=>document.querySelector(s);const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+const uid=p=>p+"_"+Date.now().toString(36)+"_"+Math.random().toString(36).slice(2,8);
+function today(){return new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Riyadh"}).format(new Date())}
+function timeNow(){return new Intl.DateTimeFormat("ar-SA",{timeZone:"Asia/Riyadh",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(new Date())}
+function dateTimes(){const d=new Date();return {h:new Intl.DateTimeFormat("ar-SA-u-ca-islamic",{timeZone:"Asia/Riyadh",year:"numeric",month:"long",day:"numeric",weekday:"long"}).format(d),g:new Intl.DateTimeFormat("ar-SA",{timeZone:"Asia/Riyadh",year:"numeric",month:"long",day:"numeric",weekday:"long"}).format(d)}}
+function updateClock(){const d=dateTimes();if($("#clockTime"))$("#clockTime").textContent=timeNow();if($("#clockDates"))$("#clockDates").textContent="هجري: "+d.h+" | ميلادي: "+d.g}
+function saveLocal(){localStorage.setItem(STORE_KEY,JSON.stringify(state));saveSettings()}
+function loadSettings(){try{const x=JSON.parse(localStorage.getItem(SETTINGS_KEY)||"{}");if(Array.isArray(x.behaviors)&&x.behaviors.length){BEHAVIORS=x.behaviors.map(b=>typeof b==="string"?{name:b,weight:25}:{name:b.name,weight:Number(b.weight)||0}).filter(b=>b.name); } else BEHAVIORS=DEFAULT_BEHAVIORS.map(name=>({name,weight:25})); if(x.principalVoteWeight!=null) window.principalVoteWeight=Number(x.principalVoteWeight)||2; else window.principalVoteWeight=2}catch{BEHAVIORS=DEFAULT_BEHAVIORS.map(name=>({name,weight:25}));window.principalVoteWeight=2}}
+function saveSettings(){localStorage.setItem(SETTINGS_KEY,JSON.stringify({behaviors:BEHAVIORS,principalVoteWeight:window.principalVoteWeight||2}))}
+function behaviorNames(){return BEHAVIORS.map(x=>typeof x==="string"?x:x.name)}
+function behaviorWeight(name){const b=BEHAVIORS.find(x=>(x.name||x)===name);return Number(b?.weight||0)}
+function loadLocal(){loadSettings();try{const x=JSON.parse(localStorage.getItem(STORE_KEY)||"{}");Object.assign(state,{classes:x.classes||[],students:x.students||[],staff:x.staff||[],attendance:x.attendance||[],
+teacherNames:x.teacherNames||[],behaviorConfig:x.behaviorConfig||[],principalVoteWeight:Number(x.principalVoteWeight??2)||2,principalVotes:x.principalVotes||[]});
+BEHAVIORS=(state.behaviorConfig.length?state.behaviorConfig:DEFAULT_BEHAVIORS.map((name,i)=>({id:"B"+i,name,weight:25}))).map(x=>typeof x==="string"?x:x.name).filter(Boolean);}catch{}if(!state.staff.length){state.staff.push({id:"ST_default_admin",name:"مديرة النظام",role:"مديرة النظام",username:"admin",password:"123456",classes:"*"});saveLocal()}}
+function session(){try{return JSON.parse(localStorage.getItem(SESSION_KEY)||"null")}catch{return null}}
+function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("show"),3000)}
+function configured(){return SCRIPT_URL&&!SCRIPT_URL.startsWith("ضع_هنا")}
+function api(action,payload={}){if(!configured())return Promise.resolve({ok:false,error:"لم يتم وضع رابط Web App بعد"});return fetch(SCRIPT_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action,payload})}).then(r=>r.json()).catch(e=>({ok:false,error:e.message}))}
+function pull(silent=true){if(!configured())return;fetch(SCRIPT_URL+"?action=bootstrap&_="+Date.now(),{cache:"no-store"}).then(r=>r.json()).then(x=>{if(x.ok!==false){state.classes=x.classes||[];state.students=x.students||[];state.staff=x.staff||[];state.attendance=x.attendance||[];state.teacherNames=x.teacherNames||[];
+state.behaviorConfig=x.behaviorConfig||state.behaviorConfig||[];
+state.principalVoteWeight=Number(x.principalVoteWeight??state.principalVoteWeight??2)||2;
+state.principalVotes=x.principalVotes||state.principalVotes||[];
+BEHAVIORS=(state.behaviorConfig.length?state.behaviorConfig:DEFAULT_BEHAVIORS.map((name,i)=>({id:"B"+i,name,weight:25}))).map(x=>typeof x==="string"?x:x.name).filter(Boolean);
+saveLocal();if(!silent)toast("تم تحديث البيانات");render(false)}}).catch(()=>{})}
+function push(action,payload){api(action,payload).then(x=>{if(!x.ok)toast("تم الحفظ محلياً، وتعذرت المزامنة: "+(x.error||""))})}
+function go(r,cid=""){route=r;selectedClassId=cid||selectedClassId;render()}
+function currentClass(){return state.classes.find(c=>String(c.id)===String(selectedClassId))}
+function isAdmin(){const s=session();return !!(s&&(s.role==="مديرة النظام"||s.role==="مديرة"||s.username==="admin"||s.id==="admin"))}
+function canAccessClass(cid){const s=session();if(!s)return false;return isAdmin()||s.classes==="*"||String(s.classes||"").split(",").includes(String(cid))}
+function nav(){return `<div class="nav no-print"><button class="${route==='dashboard'?'active':''}" onclick="go('dashboard')">الرئيسية</button><button class="${route==='classes'?'active':''}" onclick="go('classes')">الفصول والطالبات</button><button class="${route==='scan'?'active':''}" onclick="go('scan')">رصد السلوك</button><button class="${route==='qr'?'active':''}" onclick="go('qr')">أكواد QR</button><button class="${route==='staff'?'active':''}" onclick="go('staff')">الإداريات</button><button class="${route==='reports'?'active':''}" onclick="go('reports')">التقارير</button><button class="${route==='settings'?'active':''}" onclick="go('settings')">الإعدادات</button><button onclick="logout()">خروج</button></div>`}
+function render(){loadLocal();const q=new URLSearchParams(location.search).get("class");if(q)selectedClassId=q;const s=session();if(!s&&q){route="scan";$("#app").innerHTML=renderScan(true);return}if(!s){renderLogin();return}const map={dashboard:renderDashboard,classes:renderClasses,scan:renderScan,qr:renderQR,staff:renderStaff,reports:renderReports,settings:renderSettings};$("#app").innerHTML=nav()+(map[route]||renderDashboard)();if(route==="qr")setTimeout(afterQr,30);if(route==="dashboard")setTimeout(drawCharts,30)}
+function renderLogin(){ $("#app").innerHTML=`<section class="login"><div class="card loginbox"><div class="logo">73</div><div class="brandmark">✦</div><h2>تسجيل الدخول</h2><p class="muted">${esc(SCHOOL_NAME)}</p><div class="field"><label>اسم المستخدم</label><input id="loginUser" autocomplete="username" placeholder="أدخل اسم المستخدم"></div><div class="field"><label>كلمة المرور</label><input id="loginPass" type="password" autocomplete="current-password" onkeydown="if(event.key==='Enter')login()" placeholder="أدخل كلمة المرور"></div><button class="btn primary" style="width:100%" onclick="login()">دخول إلى المنصة</button></div></section>`}
+async function login(){
+  // تسجيل الدخول الرئيسي للمديرة
+  if (String($("#loginUser").value).trim() === "admin" && String($("#loginPass").value) === "123456") {
+    state.user = {id:"admin", name:"المديرة", role:"مديرة النظام", username:"admin", classes:"*"};
+    saveLocal();
+    localStorage.setItem(SESSION_KEY, JSON.stringify({
+      id:"admin",
+      name:"المديرة",
+      role:"مديرة النظام",
+      classes:"*"
+    }));
+    startPolling();
+    go("dashboard");
+    return;
+  }
+
+  const u=$("#loginUser").value.trim(),p=$("#loginPass").value;
+  if(!u||!p){toast("أدخلي اسم المستخدم وكلمة المرور");return}
+  const btn=document.querySelector(".loginbox .btn.primary");
+  if(btn){btn.disabled=true;btn.textContent="جاري التحقق..."}
+  try{
+    if(configured()){
+      const res=await fetch(SCRIPT_URL+"?action=bootstrap&_="+Date.now(),{cache:"no-store"});
+      const data=await res.json();
+      if(data.ok===false) throw new Error(data.error||"تعذر الاتصال");
+      state.classes=data.classes||[];
+      state.students=data.students||[];
+      state.staff=data.staff||[];
+      state.attendance=data.attendance||[];
+      state.teacherNames=data.teacherNames||[];
+      state.behaviorConfig=data.behaviorConfig||[];
+      state.principalVoteWeight=Number(data.principalVoteWeight??2)||2;
+      state.principalVotes=data.principalVotes||[];
+      BEHAVIORS=(state.behaviorConfig.length?state.behaviorConfig:DEFAULT_BEHAVIORS.map((name,i)=>({id:"B"+i,name,weight:25}))).map(x=>typeof x==="string"?x:x.name).filter(Boolean);
+      saveLocal();
+    }
+    const x=state.staff.find(a=>String(a.username).trim()===u&&String(a.password)===String(p));
+    if(!x){toast("اسم المستخدم أو كلمة المرور غير صحيحة");return}
+    localStorage.setItem(SESSION_KEY,JSON.stringify({id:x.id,name:x.name,role:x.role,classes:x.classes}));
+    startPolling();go("dashboard");
+  }catch(e){
+    toast("تعذر الاتصال بالمنصة: "+e.message);
+  }finally{
+    if(btn){btn.disabled=false;btn.textContent="دخول إلى المنصة"}
+  }
+}
+function logout(){localStorage.removeItem(SESSION_KEY);if(pollTimer)clearInterval(pollTimer);render()}
+function startPolling(){if(pollTimer)clearInterval(pollTimer);pull(true);pollTimer=setInterval(()=>pull(true),4000)}
+
+function hasBehavior(rec,b){
+  const v=String(rec?.behavior||rec?.status||"");
+  return v.split(/[،,]/).map(x=>x.trim()).includes(b);
+}
+function selectedBehaviors(){
+  const cfg=state.behaviorConfig||[];
+  if(cfg.length){
+    return cfg.filter(x=>x.active===true || String(x.active).toLowerCase()==="true")
+      .sort((a,b)=>(Number(a.order)||0)-(Number(b.order)||0))
+      .map(x=>String(x.name||"").trim()).filter(Boolean);
+  }
+  return [...DEFAULT_BEHAVIORS];
+}
+function behaviorNames(){return selectedBehaviors();}
+
+function flashButtons(){
+  document.querySelectorAll('.scan-action').forEach(b=>{
+    b.classList.remove('pulse-btn'); void b.offsetWidth; b.classList.add('pulse-btn');
+    setTimeout(()=>b.classList.remove('pulse-btn'),900);
+  });
+}
+function thankTeacher(name){
+  const box=$("#teacherThanks");
+  if(box) box.innerHTML=`<div class="thanks">🌷 <b>شكرًا لكِ ${esc(name||"يا معلمة")}</b><br><span class="muted">شكرًا لجهودكِ الجميلة في رصد وتعزيز السلوك الإيجابي لطالباتكِ.</span></div>`;
+}
+function renderDashboard(){const d=today(),a=state.attendance.filter(x=>x.date===d),dist=new Set(a.filter(x=>x.status==="متميز").map(x=>x.studentId)).size;return `<section class="card"><div class="row between"><div><h2>لوحة التحكم</h2><p class="muted">متابعة نتائج رصد السلوك الإيجابي — ${esc(d)}</p></div><button class="btn" onclick="pull(false)">تحديث</button></div></section><div class="grid g4"><div class="stat"><b>${state.classes.length}</b><span>الفصول</span></div><div class="stat"><b>${state.students.length}</b><span>الطالبات</span></div><div class="stat"><b>${a.length}</b><span>عمليات الرصد اليوم</span></div><div class="stat"><b>${dist}</b><span>المتميزات اليوم</span></div></div><div class="grid g2" style="margin-top:18px"><section class="card"><h3>توزيع عناصر السلوك الإيجابي</h3><div class="chartbox"><canvas id="behaviorChart"></canvas></div></section><section class="card"><h3>الرصد حسب الفصول</h3><div class="chartbox"><canvas id="classChart"></canvas></div></section></div><section class="card"><div class="row between"><h3>الفصول</h3><button class="btn primary" onclick="go('classes')">إدارة الفصول</button></div><div class="grid g3">${state.classes.map(c=>{const n=state.students.filter(s=>String(s.classId)===String(c.id)).length;const z=new Set(a.filter(x=>String(x.classId)===String(c.id)).map(x=>x.studentId)).size;const pct=n?Math.round(z/n*100):0;return `<div class="class-card"><div class="row between"><h3>${esc(c.name)}</h3><span class="pill">${esc(c.number||"")}</span></div><p class="muted">${z} من ${n} طالبة — ${pct}%</p><div class="progress"><i style="width:${pct}%"></i></div><div class="row" style="margin-top:12px"><button class="btn primary sm" onclick="go('scan','${esc(c.id)}')">رصد</button><button class="btn sm" onclick="go('qr')">QR</button></div></div>`}).join("")||`<p class="muted">لا توجد فصول بعد.</p>`}</div></section>`}
+function drawBar(canvas,labels,values,title){if(!canvas)return;const ctx=canvas.getContext("2d"),dpr=devicePixelRatio||1,w=canvas.clientWidth,h=canvas.clientHeight;canvas.width=w*dpr;canvas.height=h*dpr;ctx.scale(dpr,dpr);ctx.clearRect(0,0,w,h);const max=Math.max(1,...values),pad=42,bw=Math.max(18,(w-pad*2)/Math.max(1,labels.length)*.55);ctx.font="12px Cairo, Arial";ctx.textAlign="center";values.forEach((v,i)=>{const x=pad+(i+.5)*(w-pad*2)/labels.length,y=h-35,bar=(h-75)*(v/max);ctx.fillStyle="#0f766e";ctx.fillRect(x-bw/2,y-bar,bw,bar);ctx.fillStyle="#17324d";ctx.fillText(String(v),x,y-bar-7);ctx.fillText(labels[i],x,y+20)});ctx.textAlign="right";ctx.fillStyle="#6b7b8c";ctx.fillText(title,w-8,18)}
+function drawCharts(){const d=today(),a=state.attendance.filter(x=>x.date===d);drawBar($("#behaviorChart"),behaviorNames(),behaviorNames().map(b=>a.filter(x=>hasBehavior(x,b)).length),"عدد الرصد");drawBar($("#classChart"),state.classes.map(c=>c.name),state.classes.map(c=>a.filter(x=>String(x.classId)===String(c.id)).length),"عدد الرصد اليوم")}
+function renderClasses(){return `<section class="card"><div class="row between"><div><h2>إدارة الفصول والطالبات</h2><p class="muted">أضيفي الفصل ثم الطالبات بالنسخ واللصق أو بالسحب والإفلات من Excel / Word / PDF.</p></div><button class="btn primary" onclick="openClassModal()">إضافة فصل + طالبات</button></div><table><thead><tr><th>الرقم</th><th>الفصل</th><th>الطالبات</th><th>إجراءات</th></tr></thead><tbody>${state.classes.map(c=>`<tr><td>${esc(c.number)}</td><td>${esc(c.name)}</td><td>${state.students.filter(s=>String(s.classId)===String(c.id)).length}</td><td><button class="btn sm" onclick="openClassModal('${esc(c.id)}')">تعديل</button> <button class="btn sm" onclick="openStudentModal('${esc(c.id)}')">إضافة طالبة</button> <button class="btn danger sm" onclick="deleteClass('${esc(c.id)}')">حذف</button></td></tr>`).join("")||`<tr><td colspan="4" class="muted">لا توجد بيانات.</td></tr>`}</tbody></table></section><section class="card"><div class="row between"><h3>قائمة الطالبات</h3><button class="btn" onclick="openImportModal()">استيراد Excel/CSV/Word</button></div><table><thead><tr><th>الفصل</th><th>الرقم</th><th>الاسم</th><th>إجراء</th></tr></thead><tbody>${state.students.map(s=>{const c=state.classes.find(x=>String(x.id)===String(s.classId));return `<tr><td>${esc(c?.name||"")}</td><td>${esc(s.number)}</td><td>${esc(s.name)}</td><td><button class="btn danger sm" onclick="deleteStudent('${esc(s.id)}')">حذف</button></td></tr>`}).join("")||`<tr><td colspan="4" class="muted">لا توجد طالبات.</td></tr>`}</tbody></table></section>`}
+function openClassModal(id=""){editingId=id;const c=state.classes.find(x=>String(x.id)===String(id));$("#modal").classList.remove("hidden");$("#modal").innerHTML=`<div class="modalbox"><h2>${c?"تعديل فصل":"إضافة فصل + طالبات"}</h2><div class="grid g2"><div class="field"><label>رقم الفصل</label><input id="cnum" value="${esc(c?.number||"")}"></div><div class="field"><label>اسم الفصل</label><input id="cname" value="${esc(c?.name||"")}"></div></div><div id="dropClass" class="drop" style="cursor:pointer;margin-bottom:12px"><div style="font-size:28px">📄</div><b>اسحبي ملف الأسماء هنا</b><div class="muted">Excel / CSV / Word / PDF</div><button class="btn sm" type="button" onclick="document.getElementById('classFile').click()">اختيار ملف</button><input id="classFile" type="file" accept=".xlsx,.xls,.csv,.docx,.doc,.pdf" hidden onchange="readFileInto(this.files[0],'#bulkNames','#classImportStatus')"></div><div id="classImportStatus" class="muted" style="margin-bottom:8px"></div><div class="field"><label>الطالبات — الرقم | الاسم (سطر لكل طالبة، أو الصقي/اسحبي هنا مباشرة)</label><textarea id="bulkNames" rows="8" placeholder="1001 | سارة محمد&#10;1002 | نورة أحمد"></textarea></div><div class="row"><button class="btn primary" onclick="saveClassModal()">حفظ</button><button class="btn" onclick="closeModal()">إلغاء</button></div></div>`;attachDropZone("dropClass","#bulkNames","#classImportStatus")}
+function parseNames(t){return t.split(/\r?\n/).map(x=>x.trim()).filter(Boolean).map(x=>{const p=x.split("|");return {number:(p.length>1?p[0]:"").trim()||uid("BC"),name:(p.length>1?p.slice(1).join("|"):p[0]).trim()}})}
+function saveClassModal(){const number=$("#cnum").value.trim(),name=$("#cname").value.trim(),rows=parseNames($("#bulkNames").value);if(!name){toast("اكتبي اسم الفصل");return}let c=state.classes.find(x=>String(x.id)===String(editingId));if(c){c.number=number;c.name=name;const ss=rows.map(x=>({id:uid("S"),classId:c.id,number:x.number,name:x.name}));if(ss.length){state.students.push(...ss);push("saveClassWithStudents",{class:c,students:ss})}else{push("saveClass",c)}}else{c={id:uid("C"),number,name};state.classes.push(c);const ss=rows.map(x=>({id:uid("S"),classId:c.id,number:x.number,name:x.name}));state.students.push(...ss);push("saveClassWithStudents",{class:c,students:ss})}saveLocal();closeModal();render();toast("تم حفظ الفصل والطالبات")}
+function openStudentModal(cid=""){$("#modal").classList.remove("hidden");$("#modal").innerHTML=`<div class="modalbox"><h2>إضافة طالبة</h2><div class="field"><label>الفصل</label><select id="sidclass">${state.classes.map(c=>`<option value="${esc(c.id)}" ${String(c.id)===String(cid)?"selected":""}>${esc(c.name)}</option>`).join("")}</select></div><div class="grid g2"><div class="field"><label>رقم الباركود</label><input id="snum"></div><div class="field"><label>اسم الطالبة</label><input id="sname"></div></div><div class="row"><button class="btn primary" onclick="saveStudent()">حفظ</button><button class="btn" onclick="closeModal()">إلغاء</button></div></div>`}
+function saveStudent(){const s={id:uid("S"),classId:$("#sidclass").value,number:$("#snum").value.trim()||uid("BC"),name:$("#sname").value.trim()};if(!s.name){toast("اكتبي اسم الطالبة");return}state.students.push(s);saveLocal();push("saveStudent",s);closeModal();render()}
+function deleteStudent(id){if(!confirm("حذف الطالبة؟"))return;state.students=state.students.filter(x=>x.id!==id);state.attendance=state.attendance.filter(x=>x.studentId!==id);saveLocal();push("deleteStudent",{id});render()}
+function deleteClass(id){if(!confirm("سيتم حذف الفصل والطالبات وسجلات الرصد. متابعة؟"))return;state.classes=state.classes.filter(x=>x.id!==id);state.students=state.students.filter(x=>String(x.classId)!==String(id));state.attendance=state.attendance.filter(x=>String(x.classId)!==String(id));saveLocal();push("deleteClass",{id});render()}
+function openImportModal(){if(!state.classes.length){toast("أضيفي فصلاً أولاً");return}$("#modal").classList.remove("hidden");$("#modal").innerHTML=`<div class="modalbox"><h2>إضافة الطالبات بالسحب والإفلات</h2><p class="muted">يدعم Excel وCSV وWord وPDF، أو نسخ الأسماء مباشرة.</p><div class="field"><label>الفصل</label><select id="impclass">${state.classes.map(c=>`<option value="${esc(c.id)}">${esc(c.name)}</option>`).join("")}</select></div><div id="dropImport" class="drop" style="cursor:pointer"><div style="font-size:32px">📄</div><b>اسحبي الملف هنا</b><div class="muted">Excel / CSV / Word / PDF</div><button class="btn sm" type="button" onclick="document.getElementById('file').click()">اختيار ملف</button><input id="file" type="file" accept=".xlsx,.xls,.csv,.docx,.doc,.pdf" hidden onchange="readFileInto(this.files[0],'#imptext','#importStatus')"></div><div id="importStatus" class="muted" style="margin-top:10px"></div><div class="field" style="margin-top:12px"><label>أو انسخي الأسماء هنا</label><textarea id="imptext" rows="10" placeholder="سارة محمد
+نورة أحمد
+هند علي
+أو: 1001 | سارة محمد"></textarea></div><div class="row"><button class="btn primary" onclick="importText()">إضافة الطالبات</button><button class="btn" onclick="closeModal()">إلغاء</button></div></div>`;attachDropZone("dropImport","#imptext","#importStatus")}
+function attachDropZone(dropId,targetSel,statusSel){const drop=document.getElementById(dropId);if(!drop)return;["dragenter","dragover"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.style.borderColor="#0f766e";drop.style.background="#effaf4"}));["dragleave","drop"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.style.borderColor="";drop.style.background=""}));drop.addEventListener("drop",e=>readFileInto(e.dataTransfer.files[0],targetSel,statusSel))}
+async function readFileInto(file,targetSel,statusSel){if(!file)return;const st=statusSel?$(statusSel):null;if(st)st.textContent="جاري قراءة الملف...";try{const n=file.name.toLowerCase();if(/\.(xlsx|xls|csv)$/.test(n)){const wb=XLSX.read(await file.arrayBuffer(),{type:"array"}),ws=wb.Sheets[wb.SheetNames[0]],rows=XLSX.utils.sheet_to_json(ws,{header:1,defval:""});$(targetSel).value=rows.filter(r=>r.some(v=>String(v).trim())).map(r=>r.length>1?String(r[0]).trim()+" | "+String(r[1]).trim():String(r[0]).trim()).join("\n");if(st)st.textContent="تمت قراءة ملف Excel/CSV بنجاح.";return}if(/\.docx$/.test(n)){if(!window.mammoth)throw Error("مكتبة Word لم تُحمّل");const r=await mammoth.extractRawText({arrayBuffer:await file.arrayBuffer()});$(targetSel).value=cleanImportedText(r.value);if(st)st.textContent="تم استخراج النص من Word.";return}if(/\.pdf$/.test(n)){if(!window.pdfjsLib)throw Error("مكتبة PDF لم تُحمّل");const data=await file.arrayBuffer(),pdf=await window.pdfjsLib.getDocument({data}).promise;let out=[];for(let i=1;i<=pdf.numPages;i++){const pg=await pdf.getPage(i),ct=await pg.getTextContent();out.push(ct.items.map(x=>x.str||"").join(" "))}$(targetSel).value=cleanImportedText(out.join("\n"));if(st)st.textContent="تم استخراج النص من PDF. راجعي الأسماء قبل الإضافة.";return}throw Error("نوع الملف غير مدعوم")}catch(e){if(st)st.textContent="تعذر قراءة الملف: "+e.message;toast("تعذر قراءة الملف")}}
+function cleanImportedText(t){return String(t||"").split(/\r?\n/).map(x=>x.replace(/\s+/g," ").trim()).filter(Boolean).join("\n")}
+function importText(){const cid=$("#impclass").value,rows=parseNames($("#imptext").value);if(!rows.length){toast("لم يتم العثور على أسماء");return}const ss=rows.map(x=>({id:uid("S"),classId:cid,number:x.number,name:x.name}));state.students.push(...ss);saveLocal();push("saveStudent",{students:ss});closeModal();render();toast("تمت إضافة "+ss.length+" طالبة")}
+function renderScan(direct=false){
+  const c=currentClass();
+  if(!c)return `<section class="card"><h2>رصد السلوك</h2><p class="muted">اختاري فصلاً من الرئيسية.</p></section>`;
+  if(!direct&&!canAccessClass(c.id))return `<section class="card"><h2>غير مصرح</h2><p class="muted">هذا الفصل غير مسند إلى حسابك.</p></section>`;
+  const dte=today(),rows=state.attendance.filter(a=>a.date===dte&&String(a.classId)===String(c.id));
+  const teacherVal=rows[0]?.teacher||"";
+  const activeBehaviors=selectedBehaviors();
+  return `<section class="card">
+    <div class="row between">
+      <div><h2>رصد السلوك — ${esc(c.name)}</h2><p class="muted">بعد مسح QR الخاص بالفصل تظهر قائمة أسماء الطالبات مباشرة.</p></div>
+      <button class="btn" onclick="go('dashboard')">الرئيسية</button>
+    </div>
+
+    <div class="field">
+      <label>اسم المعلمة</label>
+      <div class="teacher-vote-row">
+        <input id="teacher" list="teacherList" value="${esc(teacherVal)}" placeholder="اكتبي اسم المعلمة">
+        <button class="btn gold vote-btn teacher-vote-button" type="button" onclick="principalVoteForTeacher()">⭐ تصويت المديرة +${Number(state.principalVoteWeight||2)} نقطة</button>
+      </div>
+      <datalist id="teacherList">${state.teacherNames.map(x=>`<option value="${esc(x.name||x)}">`).join("")}</datalist>
+      <div id="principalVoteStatus" style="margin-top:8px"></div>
+    </div>
+
+    <div class="card" style="margin:0 0 14px;background:#f7fbfd">
+      <b>عناصر السلوك المعتمدة من الإعدادات</b>
+      <p class="muted" style="margin:5px 0 0">${activeBehaviors.length ? esc(activeBehaviors.join("، ")) : "لم يتم اختيار أي عنصر من الإعدادات."}</p>
+    </div>
+
+    <div class="student-list">
+      ${state.students.filter(s=>String(s.classId)===String(c.id)).map(s=>{
+        const r=rows.find(x=>x.studentId===s.id);
+        return `<div class="student-row ${r?.status==='متميز'?'present':''}">
+          <div style="width:100%">
+            <div class="row between"><b>${esc(s.name)}</b><span class="pill">${r ? 'تم الرصد' : 'جاهزة للرصد'}</span></div>
+          </div>
+        </div>`;
+      }).join("")||`<p class="muted">لا توجد طالبات في الفصل.</p>`}
+    </div>
+
+    <div class="row" style="margin:14px 0">
+      <button class="btn primary scan-action" onclick="saveAllStudentsToday()">حفظ الرصد للطالبات</button>
+      <button class="btn danger scan-action" onclick="deleteToday('${esc(c.id)}')">إعادة رصد اليوم</button>
+      <span class="pill">تم رصد ${rows.length}</span>
+    </div>
+    <div id="lastScan" style="margin-top:12px"></div>
+    <div id="teacherThanks"></div>
+  </section>`;
+}
+
+function toggleBehaviorChip(el){
+  document.querySelectorAll('#behaviorChips .chip').forEach(x=>x.classList.remove('sel'));
+  if(el)el.classList.add('sel');
+  // Second click on a selected item re-enables all four, making the common "all" workflow one click away.
+  if(el?.dataset.behavior==="__all__") document.querySelectorAll('#behaviorChips .chip').forEach(x=>x.classList.add('sel'));
+}
+function focusBarcode(){const x=$("#scanInput");if(x){x.focus();x.select();}}
+function selectAllBehaviors(){document.querySelectorAll("#behaviorChips .chip").forEach(x=>x.classList.add("sel"));}
+function scanStudent(){
+  const c=currentClass(),code=$("#scanInput")?.value.trim();
+  if(!c||!code)return;
+  const s=state.students.find(x=>String(x.classId)===String(c.id)&&String(x.number)===String(code));
+  if(!s){toast("لم يتم العثور على طالبة بهذا الرقم");return}
+  const d=today(), behaviors=selectedBehaviors();
+  if(!behaviors.length){toast("اختاري سلوكًا واحدًا على الأقل");return}
+  const teacher=$("#teacher")?.value.trim()||"";
+  const rec={id:uid("A"),classId:c.id,date:d,teacher,time:timeNow(),studentId:s.id,studentName:s.name,status:"متميز",behavior:behaviors.join("،")};
+  const i=state.attendance.findIndex(a=>a.date===d&&String(a.classId)===String(c.id)&&a.studentId===s.id);
+  if(i>=0)state.attendance[i]=Object.assign({},state.attendance[i],rec,{id:state.attendance[i].id});
+  else state.attendance.push(rec);
+  saveLocal(); lastScanStudent=s;
+  const h=$("#scanHero");h.classList.remove("ok");void h.offsetWidth;h.classList.add("ok");
+  flashButtons();
+  $("#lastScan").innerHTML=`<div class="card" style="margin:0;background:#effaf4;border-color:#74c69d"><div class="success">🎉 أحسنتِ! تم رصد السلوك بنجاح</div><div style="margin-top:4px"><b>${esc(s.name)}</b> — ${esc(behaviors.join("، "))} — بواسطة ${esc(teacher||"المعلمة")}</div></div>`;
+  thankTeacher(teacher);
+  beepSuccess(); $("#scanInput").value=""; setTimeout(()=>$("#scanInput")?.focus(),50);
+  push("saveAttendance",[rec]);
+  setTimeout(()=>render(false),700);
+}
+function principalVoteForTeacher(){
+  const teacher=$("#teacher")?.value.trim();
+  if(!teacher){toast("اختاري اسم المعلمة أولاً");$("#teacher")?.focus();return}
+  const weight=Number(state.principalVoteWeight||2)||2;
+  const c=currentClass();
+  const vote={id:uid("PV"),teacher,weight,classId:c?.id||"",date:today(),time:timeNow(),voter:"المديرة"};
+  state.principalVotes.push(vote); saveLocal(); flashButtons();
+  const box=$("#principalVoteStatus");
+  if(box) box.innerHTML=`<span class="success">✓ تم تسجيل تصويت المديرة للمعلمة ${esc(teacher)} بقيمة ${weight} نقطة.</span>`;
+  toast(`تم تصويت المديرة للمعلمة: ${teacher} (+${weight})`); beepSuccess();
+  push("savePrincipalVote",vote);
+}
+function saveBehaviorSettings(){
+  const rows=[...document.querySelectorAll(".behavior-setting-row")].map((row,i)=>({
+    id:row.dataset.id||uid("B"),
+    name:row.querySelector(".behavior-name").value.trim(),
+    weight:Number(row.querySelector(".behavior-weight").value)||0,
+    active:!!row.querySelector(".behavior-active")?.checked,
+    order:i+1
+  })).filter(x=>x.name);
+
+  if(!rows.length){toast("أضيفي عنصر سلوك واحدًا على الأقل");return}
+  const activeCount=rows.filter(x=>x.active).length;
+  if(!activeCount){toast("اختاري عنصر سلوك واحدًا على الأقل ليظهر ويُستخدم في الرصد");return}
+  const total=rows.reduce((a,b)=>a+Number(b.weight||0),0);
+  if(Math.abs(total-100)>0.001){toast("يجب أن يكون مجموع الأوزان النسبية = 100%");return}
+
+  state.behaviorConfig=rows;
+  BEHAVIORS=rows.map(x=>x.name);
+  saveLocal();
+  push("saveBehaviorConfig",rows);
+  toast("تم حفظ عناصر السلوك والأوزان وخيارات الرصد");
+  render();
+}
+
+function savePrincipalVoteWeight(){
+  const n=Math.max(1,Number($("#principalVoteWeight")?.value)||2);
+  state.principalVoteWeight=n; saveLocal(); push("savePrincipalVoteWeight",{weight:n});
+  toast(`تم اعتماد وزن تصويت المديرة: ${n} نقطة`); render();
+}
+function addBehaviorSetting(){
+  const wrap=$("#behaviorSettingsRows"); if(!wrap)return;
+  const row=document.createElement("div");
+  row.className="row behavior-setting-row";
+  row.dataset.id=uid("B");
+  row.style.cssText="padding:10px;border:1px solid var(--line);border-radius:14px;margin-bottom:8px;gap:8px";
+  row.innerHTML=`<label class="behavior-active-wrap" style="display:flex;align-items:center;gap:6px;white-space:nowrap"><input class="behavior-active" type="checkbox" checked> استخدام في الرصد</label><input class="behavior-name" value="" placeholder="اسم عنصر السلوك" style="flex:1"><input class="behavior-weight" type="number" min="0" max="100" value="0" placeholder="الوزن %" style="width:120px"><button class="btn danger sm" onclick="this.parentElement.remove()">حذف</button>`;
+  wrap.appendChild(row);
+}
+
+function markBehavior(id,behavior){
+  const c=currentClass(),s=state.students.find(x=>x.id===id),d=today();
+  const i=state.attendance.findIndex(a=>a.date===d&&String(a.classId)===String(c.id)&&a.studentId===id);
+  if(i>=0){
+    let arr=String(state.attendance[i].behavior||"").split(/[،,]/).map(x=>x.trim()).filter(Boolean);
+    if(arr.includes(behavior)) arr=arr.filter(x=>x!==behavior); else arr.push(behavior);
+    if(!arr.length) state.attendance.splice(i,1);
+    else state.attendance[i]=Object.assign({},state.attendance[i],{behavior:arr.join("،"),status:"متميز",time:timeNow(),teacher:$("#teacher")?.value.trim()||state.attendance[i].teacher||""});
+  }else{
+    state.attendance.push({id:uid("A"),classId:c.id,date:d,teacher:$("#teacher")?.value.trim()||"",time:timeNow(),studentId:id,studentName:s.name,status:"متميز",behavior});
+  }
+  saveLocal(); flashButtons(); render(false);
+}
+function principalVote(id){
+  const c=currentClass(),s=state.students.find(x=>x.id===id);
+  if(!c||!s)return;
+  const d=today(),teacher=$("#teacher")?.value.trim()||"";
+  const i=state.attendance.findIndex(a=>a.date===d&&String(a.classId)===String(c.id)&&a.studentId===id);
+  if(i>=0){
+    const rec=state.attendance[i];
+    rec.principalVote=true; rec.principalVoteWeight=window.principalVoteWeight||2; rec.score=(Number(rec.score)||0)+(Number(window.principalVoteWeight)||2); if(teacher)rec.teacher=teacher; rec.time=timeNow();
+    saveLocal(); push("saveAttendance",[rec]); toast("تم احتساب تصويت المديرة بـ "+(window.principalVoteWeight||2)+" نقطتين");
+  }else{
+    const rec={id:uid("A"),classId:c.id,date:d,teacher,time:timeNow(),studentId:id,studentName:s.name,status:"تصويت المديرة",behavior:"",principalVote:true,principalVoteWeight:window.principalVoteWeight||2,score:Number(window.principalVoteWeight)||2};
+    state.attendance.push(rec); saveLocal(); push("saveAttendance",[rec]); toast("تم تسجيل تصويت المديرة بـ "+(window.principalVoteWeight||2)+" نقطتين");
+  }
+  beepSuccess(); flashButtons(); render(false);
+}
+function saveScan(){const c=currentClass(),rows=state.attendance.filter(a=>a.date===today()&&String(a.classId)===String(c?.id));if(!c||!rows.length){toast("لا توجد سجلات للحفظ");return}const teacher=$("#teacher")?.value.trim();rows.forEach(x=>{if(teacher)x.teacher=teacher});saveLocal();push("saveAttendance",rows);toast("تم حفظ واعتماد الرصد بنجاح");beepSuccess()}function saveAllStudentsToday(){
+  const c=currentClass();
+  if(!c){toast("اختاري فصلاً أولاً");return}
+  const behaviors=selectedBehaviors();
+  if(!behaviors.length){toast("اختاري عنصر سلوك واحدًا على الأقل من الإعدادات");go("settings");return}
+  const teacher=$("#teacher")?.value.trim()||"";
+  if(!teacher){toast("اكتبي اسم المعلمة أولاً");$("#teacher")?.focus();return}
+
+  const d=today(), existing=state.attendance.filter(a=>a.date===d&&String(a.classId)===String(c.id));
+  const newRows=[];
+  state.students.filter(s=>String(s.classId)===String(c.id)).forEach(s=>{
+    const rec={id:uid("A"),classId:c.id,date:d,teacher,time:timeNow(),studentId:s.id,studentName:s.name,status:"متميز",behavior:behaviors.join("،")};
+    const i=state.attendance.findIndex(a=>a.date===d&&String(a.classId)===String(c.id)&&String(a.studentId)===String(s.id));
+    if(i>=0){rec.id=state.attendance[i].id;state.attendance[i]=Object.assign({},state.attendance[i],rec);}
+    else{state.attendance.push(rec);}
+    newRows.push(rec);
+  });
+  saveLocal(); push("saveAttendance",newRows);
+  toast(`تم رصد ${newRows.length} طالبة بعناصر: ${behaviors.join("، ")}`);
+  beepSuccess(); setTimeout(()=>render(false),500);
+}
+
+function deleteToday(cid){if(!confirm("حذف رصد هذا الفصل لهذا اليوم؟"))return;state.attendance=state.attendance.filter(a=>!(String(a.classId)===String(cid)&&a.date===today()));saveLocal();push("deleteToday",{classId:cid,date:today()});render();toast("تمت إعادة رصد اليوم")}
+function beepSuccess(){try{const A=window.AudioContext||window.webkitAudioContext;if(!A)return;const ac=new A(),o=ac.createOscillator(),g=ac.createGain();o.type="sine";o.frequency.setValueAtTime(660,ac.currentTime);o.frequency.setValueAtTime(880,ac.currentTime+.12);g.gain.setValueAtTime(.0001,ac.currentTime);g.gain.exponentialRampToValueAtTime(.18,ac.currentTime+.02);g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+.42);o.connect(g);g.connect(ac.destination);o.start();o.stop(ac.currentTime+.45)}catch{}}
+function renderQR(){return `<section class="card"><div class="row between"><div><h2>أكواد QR للفصول</h2><p class="muted">مسح الرمز يفتح رصد الفصل مباشرة.</p></div><button class="btn primary" onclick="printAllQR()">طباعة جميع الأكواد</button></div><div class="qrgrid">${state.classes.map(c=>`<div class="card qr"><h3>${esc(c.name)}</h3><div id="qr_${esc(c.id)}" class="qrbox"></div><div class="pill">تعزيز السلوك الإيجابي</div><input value="${esc(buildQrUrl(c.id))}" readonly><div class="row" style="justify-content:center;margin-top:10px"><button class="btn sm" onclick="copyText('${esc(buildQrUrl(c.id))}')">نسخ الرابط</button><button class="btn sm" onclick="printOneQR('${esc(c.id)}')">طباعة</button></div></div>`).join("")||`<p class="muted">لا توجد فصول.</p>`}</div></section>`}
+function buildQrUrl(id){return location.href.split("?")[0]+"?class="+encodeURIComponent(id)}function afterQr(){state.classes.forEach(c=>{const el=$("#qr_"+c.id);if(el&&window.QRCode){el.innerHTML="";new QRCode(el,{text:buildQrUrl(c.id),width:150,height:150,colorDark:"#102a43",colorLight:"#ffffff"})}})}function copyText(x){navigator.clipboard?.writeText(x).then(()=>toast("تم نسخ الرابط")).catch(()=>toast(x))}
+function printOneQR(id){const c=state.classes.find(x=>String(x.id)===String(id)),url=buildQrUrl(id),w=window.open("","_blank");w.document.write(`<html dir="rtl"><head><title>QR</title></head><body style="font-family:Arial;text-align:center;padding:40px"><h1>${esc(SCHOOL_NAME)}</h1><h2>${esc(c?.name||"")}</h2><div id="q"></div><p style="font-weight:800">تعزيز السلوك الإيجابي</p><script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"><\/script><script>new QRCode(document.getElementById('q'),{text:${JSON.stringify(url)},width:240,height:240});setTimeout(()=>print(),600)<\/script></body></html>`);w.document.close()}
+function printAllQR(){const w=window.open("","_blank");w.document.write(`<html dir="rtl"><head><title>QR</title><style>body{font-family:Arial;text-align:center}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}.item{padding:20px;border:1px solid #ddd;break-inside:avoid}</style></head><body><h1>${esc(SCHOOL_NAME)}</h1><div style="font-weight:800;font-size:20px;margin:8px 0 18px">تعزيز السلوك الإيجابي</div><div class="grid">${state.classes.map(c=>`<div class="item"><h2>${esc(c.name)}</h2><div id="q${esc(c.id)}"></div><p style="font-weight:800">تعزيز السلوك الإيجابي</p></div>`).join("")}</div><script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"><\/script><script>${state.classes.map(c=>`new QRCode(document.getElementById("q${esc(c.id)}"),{text:${JSON.stringify(buildQrUrl(c.id))},width:200,height:200});`).join("")}setTimeout(()=>print(),900)<\/script></body></html>`);w.document.close()}
+function renderStaff(){return `<section class="card"><div class="row between"><div><h2>الإداريات وحسابات الدخول</h2><p class="muted">الحسابات تظهر في الصفحة الرئيسية لتسجيل الدخول.</p></div><button class="btn primary" onclick="openStaffModal()">إضافة حساب إدارية</button></div><table><thead><tr><th>الاسم</th><th>الصفة</th><th>اسم المستخدم</th><th>الفصول</th><th>إجراء</th></tr></thead><tbody>${state.staff.map(s=>`<tr><td>${esc(s.name)}</td><td>${esc(s.role)}</td><td>${esc(s.username)}</td><td>${s.classes==='*'?'كل الفصول':esc((s.classes||'').split(',').map(id=>state.classes.find(c=>String(c.id)===String(id))?.name||id).join('، '))}</td><td><button class="btn danger sm" onclick="deleteStaff('${esc(s.id)}')">حذف</button></td></tr>`).join("")}</tbody></table></section><section class="card"><div class="row between"><h3>أسماء المعلمات للاقتراح</h3><button class="btn" onclick="addTeacherName()">إضافة اسم</button></div><div class="chips">${state.teacherNames.map(x=>`<span class="chip">${esc(x.name||x)} <b onclick="deleteTeacherName('${esc(x.name||x)}')">×</b></span>`).join("")||`<span class="muted">لا توجد أسماء بعد.</span>`}</div></section>`}
+function openStaffModal(){$("#modal").classList.remove("hidden");$("#modal").innerHTML=`<div class="modalbox"><h2>إضافة حساب إدارية</h2><div class="grid g2"><div class="field"><label>الاسم</label><input id="stname"></div><div class="field"><label>الصفة</label><input id="strole" value="إدارية"></div><div class="field"><label>اسم المستخدم</label><input id="stuser"></div><div class="field"><label>كلمة المرور</label><input id="stpass" type="password"></div></div><label>الفصول المسندة</label><div class="chips" id="classchips">${state.classes.map(c=>`<span class="chip" data-id="${esc(c.id)}" onclick="this.classList.toggle('sel')">${esc(c.name)}</span>`).join("")}</div><div class="row" style="margin-top:18px"><button class="btn primary" onclick="saveStaff()">حفظ الحساب</button><button class="btn" onclick="closeModal()">إلغاء</button></div></div>`}
+function saveStaff(){const classes=[...document.querySelectorAll('#classchips .sel')].map(x=>x.dataset.id),s={id:uid('ST'),name:$('#stname').value.trim(),role:$('#strole').value.trim()||'إدارية',username:$('#stuser').value.trim(),password:$('#stpass').value,classes:classes.join(',')};if(!s.name||!s.username||!s.password){toast('أكملي بيانات الحساب');return}if(state.staff.some(x=>x.username===s.username)){toast('اسم المستخدم مستخدم مسبقاً');return}state.staff.push(s);saveLocal();push('saveStaff',s);closeModal();render();toast('تم إنشاء الحساب')}
+function deleteStaff(id){if(!confirm('حذف الحساب؟'))return;state.staff=state.staff.filter(x=>x.id!==id);saveLocal();push('deleteStaff',{id});render()}
+function addTeacherName(){const n=prompt('اسم المعلمة:')?.trim();if(!n)return;const x={id:n,name:n};if(state.teacherNames.some(a=>(a.name||a)===n))return;state.teacherNames.push(x);saveLocal();push('saveTeacherName',x);render()}
+function deleteTeacherName(name){if(!confirm('حذف الاسم؟'))return;state.teacherNames=state.teacherNames.filter(x=>(x.name||x)!==name);saveLocal();push('deleteTeacherName',{name});render()}
+
+function renderSettings(){
+  const cfg=state.behaviorConfig.length?state.behaviorConfig:DEFAULT_BEHAVIORS.map((name,i)=>({id:"B"+i,name,weight:25,active:true,order:i+1}));
+  return `<section class="card"><h2>الإعدادات</h2><p class="muted">من هنا فقط يتم تحديد عناصر السلوك التي تستخدم في الرصد. لن تظهر خيارات السلوك للمعلمات في صفحة الرصد.</p></section>
+  <section class="card">
+    <div class="row between">
+      <div><h3>عناصر السلوك الإيجابي</h3><p class="muted">فعّلي عنصرًا واحدًا أو فعّلي العناصر الأربعة معًا. العناصر المفعلة تُطبق تلقائيًا على الرصد.</p></div>
+      <button class="btn" onclick="addBehaviorSetting()">+ إضافة عنصر</button>
+    </div>
+    <div id="behaviorSettingsRows">${cfg.map((x,i)=>`<div class="row behavior-setting-row" data-id="${esc(x.id||uid("B"))}" style="padding:10px;border:1px solid var(--line);border-radius:14px;margin-bottom:8px;gap:8px">
+      <label class="behavior-active-wrap" style="display:flex;align-items:center;gap:6px;white-space:nowrap"><input class="behavior-active" type="checkbox" ${x.active===true||String(x.active).toLowerCase()==="true"?"checked":""}> استخدام في الرصد</label>
+      <input class="behavior-name" value="${esc(x.name)}" placeholder="اسم عنصر السلوك" style="flex:1">
+      <input class="behavior-weight" type="number" min="0" max="100" value="${Number(x.weight)||0}" placeholder="الوزن %" style="width:120px">
+      <button class="btn danger sm" onclick="this.parentElement.remove()">حذف</button>
+    </div>`).join("")}</div>
+    <div class="row" style="margin-top:10px">
+      <button class="btn primary" onclick="saveBehaviorSettings()">حفظ عناصر السلوك والأوزان</button>
+      <button class="btn" onclick="setAllBehaviorsActive(true)">تفعيل الأربعة</button>
+      <button class="btn" onclick="setAllBehaviorsActive(false)">إلغاء التفعيل</button>
+    </div>
+  </section>
+  <section class="card"><h3>تصويت المديرة</h3><p class="muted">زر التصويت يظهر بجانب اسم المعلمة في صفحة الرصد.</p>
+  <div class="field" style="max-width:280px"><label>قيمة التصويت بالنقاط</label><input id="principalVoteWeight" type="number" min="1" value="${Number(state.principalVoteWeight||2)}"></div>
+  <button class="btn gold" onclick="savePrincipalVoteWeight()">حفظ قيمة التصويت</button></section>
+  <section class="card settings-danger"><div class="row between"><div><h3>حذف الرصد حسب الفصل</h3><p class="muted">يمكن حذف رصد فصل محدد مع الاحتفاظ بالطالبات.</p></div><button class="btn danger" onclick="deleteAllVoting()">حذف جماعي لكل الرصد</button></div>
+  <table><thead><tr><th>الفصل</th><th>عدد السجلات</th><th>إجراء</th></tr></thead><tbody>${state.classes.map(c=>{const n=state.attendance.filter(a=>String(a.classId)===String(c.id)).length;return `<tr><td>${esc(c.name)}</td><td>${n}</td><td><button class="btn danger sm" onclick="deleteClassVoting('${esc(c.id)}')">حذف التصويت</button></td></tr>`}).join("")||`<tr><td colspan="3">لا توجد فصول.</td></tr>`}</tbody></table></section>`;
+}
+function setAllBehaviorsActive(value){
+  document.querySelectorAll(".behavior-active").forEach(x=>x.checked=!!value);
+}
+
+function deleteClassVoting(id){
+  const c=state.classes.find(x=>String(x.id)===String(id));
+  const n=state.attendance.filter(a=>String(a.classId)===String(id)).length;
+  if(!confirm(`تأكيد الحذف؟ سيتم حذف ${n} سجل رصد من فصل "${c?.name||""}" فقط، ولن يتم حذف الطالبات.`))return;
+  state.attendance=state.attendance.filter(a=>String(a.classId)!==String(id));
+  saveLocal(); push("deleteClassVoting",{classId:id}); render(); toast("تم حذف رصد الفصل");
+}
+function deleteAllVoting(){
+  if(!state.attendance.length){toast("لا توجد سجلات رصد للحذف");return}
+  if(!confirm(`تأكيد الحذف الجماعي؟ سيتم حذف جميع سجلات الرصد وعددها ${state.attendance.length} سجلًا، ولن يتم حذف الفصول أو الطالبات.`))return;
+  state.attendance=[]; saveLocal(); push("deleteAllVoting",{}); render(); toast("تم حذف جميع سجلات الرصد");
+}
+function renderReports(){const d=new Date(today()+"T00:00:00"),from=new Date(d);from.setDate(d.getDate()-6);return `<section class="card"><h2>التقارير والتحليلات</h2><p class="muted">تقارير أسبوعية وشهرية ومخصصة مع رسوم بيانية، Excel وHTML وطباعة PDF.</p><div class="grid g4"><div class="field"><label>الفترة</label><select id="reportPeriod"><option value="week">أسبوعي</option><option value="month">شهري</option><option value="custom">مخصص</option></select></div><div class="field"><label>من</label><input id="reportFrom" type="date" value="${from.toISOString().slice(0,10)}"></div><div class="field"><label>إلى</label><input id="reportTo" type="date" value="${today()}"></div><div class="field"><label>الفصل</label><select id="reportClass"><option value="">كل الفصول</option>${state.classes.map(c=>`<option value="${esc(c.id)}">${esc(c.name)}</option>`).join("")}</select></div></div><div class="row"><button class="btn primary" onclick="setReportPeriod('week')">الأسبوع الحالي</button><button class="btn" onclick="setReportPeriod('month')">الشهر الحالي</button><button class="btn" onclick="buildReportPreview()">عرض التقرير</button><button class="btn navy" onclick="exportCurrentExcel()">Excel</button><button class="btn" onclick="printCurrentReport()">PDF / طباعة</button><button class="btn" onclick="exportCurrentHTML()">HTML</button></div></section><section id="reportPreview" class="card"><h3>معاينة التقرير</h3><p class="muted">اختاري الفترة ثم اضغطي عرض التقرير.</p></section>`}
+function setReportPeriod(type){const d=new Date(today()+"T00:00:00"),from=new Date(d);if(type==='month')from.setDate(1);else from.setDate(d.getDate()-6);$("#reportFrom").value=from.toISOString().slice(0,10);$("#reportTo").value=today();$("#reportPeriod").value=type;buildReportPreview()}
+function getReportFilter(){return{from:$("#reportFrom")?.value||today(),to:$("#reportTo")?.value||today(),cid:$("#reportClass")?.value||""}}
+function filteredReportRows(){const f=getReportFilter();return state.attendance.filter(a=>a.date>=f.from&&a.date<=f.to&&(!f.cid||String(a.classId)===String(f.cid)))}
+function buildReportPreview(){const f=getReportFilter(),rows=filteredReportRows(),counts=BEHAVIORS.map(b=>rows.filter(x=>hasBehavior(x,b)).length),unique=new Set(rows.map(x=>x.studentId)).size,box=$("#reportPreview");if(!box)return;box.innerHTML=`<div class="row between"><h3>نتائج الفترة</h3><span class="pill">${esc(f.from)} إلى ${esc(f.to)}</span></div><div class="grid g4"><div class="stat"><b>${rows.length}</b><span>إجمالي الرصد</span></div><div class="stat"><b>${unique}</b><span>طالبات تم رصدهن</span></div><div class="stat"><b>${counts[0]}</b><span>التعاون</span></div><div class="stat"><b>${counts[1]}</b><span>الاحترام</span></div></div><div class="chartbox" style="margin-top:16px;height:330px"><canvas id="reportChart"></canvas></div><h3 style="margin-top:18px">ملخص عناصر السلوك</h3><table><thead><tr><th>العنصر</th><th>عدد الرصد</th></tr></thead><tbody>${behaviorNames().map((b,i)=>`<tr><td>${esc(b)}</td><td>${counts[i]}</td></tr>`).join("")}</tbody></table><div class="footer" style="padding-top:20px">الموجهة الطلابية أ/ مها العتيبي<br>الأستاذة فاطمة الصعب<br>${esc(SCHOOL_NAME)}<br>مديرة المدرسة أ/ عبير الحربي</div>`;drawBar($("#reportChart"),behaviorNames(),counts,"توزيع عناصر السلوك")}
+function reportRowsForCurrent(){return filteredReportRows().sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time))}
+function exportCurrentExcel(){const f=getReportFilter(),rows=reportRowsForCurrent(),data=rows.map(a=>({'الفصل':state.classes.find(c=>String(c.id)===String(a.classId))?.name||'','رقم الطالبة':state.students.find(s=>s.id===a.studentId)?.number||'','اسم الطالبة':a.studentName,'السلوك':a.behavior||a.status,'المعلمة':a.teacher,'الوقت':a.time,'التاريخ':a.date})),wb=XLSX.utils.book_new(),ws=XLSX.utils.json_to_sheet(data);XLSX.utils.book_append_sheet(wb,ws,'التقرير');XLSX.writeFile(wb,`تقرير_السلوك_${f.from}_${f.to}.xlsx`);toast("تم تصدير Excel")}
+function reportHTMLCurrent(){const f=getReportFilter(),rows=reportRowsForCurrent(),counts=BEHAVIORS.map(b=>rows.filter(x=>hasBehavior(x,b)).length),max=Math.max(1,...counts);return `<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"><title>تقرير تعزيز السلوك الإيجابي</title><style>body{font-family:Cairo,Arial,sans-serif;color:#102a43;margin:0}main{max-width:1100px;margin:auto;padding:28px}.head{text-align:center;border-bottom:3px solid #0f766e;padding-bottom:16px}.head h1{font-size:30px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.card{border:1px solid #dbe4ec;border-radius:14px;padding:12px;text-align:center}.num{font-size:25px;font-weight:800;color:#0f766e}.chart{display:flex;align-items:flex-end;justify-content:center;gap:30px;height:240px;margin:25px}.bar{width:65px;background:#0f766e;border-radius:8px 8px 0 0;position:relative}.bar span{position:absolute;top:100%;left:-20px;right:-20px;text-align:center;margin-top:8px}.bar b{position:absolute;top:-25px;left:0;right:0;text-align:center}table{width:100%;border-collapse:collapse;margin-top:20px}th,td{border:1px solid #dbe4ec;padding:8px}th{background:#102a43;color:#fff}.foot{text-align:center;margin-top:40px;padding-top:15px;border-top:1px solid #dbe4ec;font-weight:700;line-height:1.9}@media(max-width:700px){.cards{grid-template-columns:1fr 1fr}}</style></head><body><main><div class="head"><h1>منصة تعزيز السلوك الإيجابي</h1><div>${esc(SCHOOL_NAME)}</div><div>تقرير من ${esc(f.from)} إلى ${esc(f.to)}</div></div><div class="cards"><div class="card"><div class="num">${rows.length}</div>إجمالي الرصد</div><div class="card"><div class="num">${new Set(rows.map(x=>x.studentId)).size}</div>طالبات</div><div class="card"><div class="num">${counts[0]}</div>التعاون</div><div class="card"><div class="num">${counts[1]}</div>الاحترام</div></div><h2>الرسم البياني</h2><div class="chart">${counts.map((v,i)=>`<div class="bar" style="height:${Math.max(8,Math.round(v/max*180))}px"><b>${v}</b><span>${esc(behaviorNames()[i])}</span></div>`).join("")}</div><h2>تفاصيل الرصد</h2><table><thead><tr><th>التاريخ</th><th>الفصل</th><th>الطالبة</th><th>السلوك</th><th>المعلمة</th><th>الوقت</th></tr></thead><tbody>${rows.map(a=>`<tr><td>${esc(a.date)}</td><td>${esc(state.classes.find(c=>String(c.id)===String(a.classId))?.name||"")}</td><td>${esc(a.studentName)}</td><td>${esc(a.behavior||a.status)}</td><td>${esc(a.teacher)}</td><td>${esc(a.time)}</td></tr>`).join("")||'<tr><td colspan="6">لا توجد سجلات.</td></tr>'}</tbody></table><div class="foot">الموجهة الطلابية أ/ مها العتيبي<br>الأستاذة فاطمة الصعب<br>${esc(SCHOOL_NAME)}<br>مديرة المدرسة أ/ عبير الحربي</div></main></body></html>`}
+function printCurrentReport(){const w=window.open('','_blank');w.document.write(reportHTMLCurrent().replace('</body>','<script>setTimeout(()=>print(),500)<\/script></body>'));w.document.close()}
+function exportCurrentHTML(){const blob=new Blob([reportHTMLCurrent()],{type:'text/html;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='تقرير_تعزيز_السلوك.html';a.click();URL.revokeObjectURL(a.href)}
+function closeModal(){$('#modal').classList.add('hidden');$('#modal').innerHTML=''}
+loadLocal();updateClock();clockTimer=setInterval(updateClock,1000);const qclass=new URLSearchParams(location.search).get('class');if(qclass){selectedClassId=qclass;route='scan'}render();if(session())startPolling();
+</script>
+</body>
+</html>
